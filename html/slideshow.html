@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Slideshow</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 30px;
+}
+img {
+  width: 400px;
+  height: 250px;
+  border-radius: 10px;
+}
+button {
+  margin: 10px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  background: #0077cc;
+  color: white;
+  cursor: pointer;
+}
+button:hover {
+  background: #005fa3;
+}
+</style>
+</head>
+<body>
+<h2>Image Slideshow</h2>
+<img id="slide" src="https://picsum.photos/400/250?random=1">
+<br>
+<button onclick="prev()">Previous</button>
+<button onclick="next()">Next</button>
+<script>
+let imgs=[
+  "https://picsum.photos/400/250?random=1",
+  "https://picsum.photos/400/250?random=2",
+  "https://picsum.photos/400/250?random=3"
+];
+let index=0;
+function show(){
+  document.getElementById('slide').src=imgs[index];
+}
+function next(){
+  index=(index+1)%imgs.length;
+  show();
+}
+function prev(){
+  index=(index-1+imgs.length)%imgs.length;
+  show();
+}
+setInterval(next,3000);
+</script>
+</body>
+</html>

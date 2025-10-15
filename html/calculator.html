@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Basic Calculator</title>
+<style>
+body {
+  font-family: Arial;
+  background: #f4f6f8;
+  text-align: center;
+  padding: 50px;
+}
+input {
+  width: 150px;
+  padding: 10px;
+  margin: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+button {
+  padding: 8px 15px;
+  margin: 5px;
+  background: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 6px;
+}
+</style>
+</head>
+<body>
+<h2>Basic Calculator</h2>
+<input id="n1" type="number" placeholder="Number 1">
+<input id="n2" type="number" placeholder="Number 2"><br>
+<button onclick="calc('add')">Add</button>
+<button onclick="calc('sub')">Subtract</button>
+<button onclick="calc('mul')">Multiply</button>
+<button onclick="calc('div')">Divide</button>
+<p id="result"></p>
+<script>
+function calc(op){
+  let a=parseFloat(n1.value), b=parseFloat(n2.value);
+  let r;
+  if(isNaN(a)||isNaN(b)) r="Error";
+  else {
+    if(op==="add") r=a+b;
+    else if(op==="sub") r=a-b;
+    else if(op==="mul") r=a*b;
+    else if(op==="div") r=b!==0?a/b:"Error";
+  }
+  result.textContent="Result: "+r;
+}
+</script>
+</body>
+</html>

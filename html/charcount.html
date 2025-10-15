@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Character Counter</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  padding: 50px;
+  background: #f4f6f8;
+}
+textarea {
+  width: 100%;
+  height: 100px;
+  border-radius: 8px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+#count {
+  margin-top: 8px;
+}
+</style>
+</head>
+<body>
+<h2>Character Counter</h2>
+<textarea id="textBox" maxlength="100" placeholder="Type something..."></textarea>
+<p id="count">Characters typed: 0 / 100</p>
+<script>
+let box=document.getElementById('textBox');
+let count=document.getElementById('count');
+box.addEventListener('input',()=>{
+  count.textContent=`Characters typed: ${box.value.length} / 100`;
+});
+</script>
+</body>
+</html>
